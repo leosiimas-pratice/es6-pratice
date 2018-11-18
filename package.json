@@ -4,7 +4,9 @@
   "description": "Biblioteca do curso JS com TDD na prática",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,16 @@
     "library"
   ],
   "author": "Leonardo Abreu <leonardo.abreu@inf.ufrgs.br>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.4"
+  },
+  "dependencies": {
+    "lint": "^1.1.2"
+  }
 }
