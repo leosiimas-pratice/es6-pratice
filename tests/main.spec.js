@@ -1,3 +1,5 @@
+var expect = require ('chai').expect
+
 describe('Main', () => {
   var arr;
 
@@ -11,24 +13,29 @@ describe('Main', () => {
 
   // Roda todas as vezes antes de um bloco
   beforeEach(() => {
-  var arr =  [1,2,3];
+  arr =  [1,2,3];
   });
 
   // Roda todas as vezes depois de um bloco
   afterEach(() => {
   });
 
+  it('should be an array', () => {
+    expect(arr).to.be.a('array')
+  })
+
   it('should have a size of 4 when push another value to the array', ()=>{
     arr.push(4);
-    console.log(arr.length);
+    expect(arr).to.have.lengthOf(4)
   });
 
   it('should have a size of 2 when pop a value from the array', ()=>{
     arr.pop(4);
-    console.log(arr.length);
+    expect(arr).to.have.lengthOf(2)
   });
 
   it('should remove 3 when use pop in the array', ()=>{
-    console.log(arr.pop() === 3);
+    arr.pop();
+    expect(arr).to.not.include(3)
   });
 });
