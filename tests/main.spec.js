@@ -1,37 +1,34 @@
-/* eslint-disable no-undef */
-// Describe serve para descrever os testes de uma certa funcao, metodo, arquivo
-// e separar os metodos
-
-// Context seprar os casos que vamos ter
-
-
-// eslint-disable-next-line func-names
 describe('Main', () => {
-  describe('Method A', () => {
-    context('Case 1', () => {
-      it('should happen blablabla', () => {
-        // Espera que aconteca
-        // Entra de dados / metodo sum(2,2)
-        // Espera retornar(4) => true | (3) => false => broken test
-        throw new Error('just an error');
-      });
-    });
-    context.skip('Case 2', () => {
-      it('should happen bla', () => {
-        // Espera que aconteca
-        // Entra de dados / metodo sum(2,2)
-        // Espera retornar(4) => true | (3) => false => broken test
-        throw new Error('just an error');
-      });
-      it('should happen blabla', () => {
-        // Espera que aconteca
-        // Entra de dados / metodo sum(2,2)
-        // Espera retornar(4) => true | (3) => false => broken test
-      });
-    });
+  var arr;
+
+  // Roda uma vez antes do bloco
+  before(() => {
   });
 
-  describe('Method B', () => {
+  // Roda uma vez depois do bloco
+  after(() => {
+  });
 
+  // Roda todas as vezes antes de um bloco
+  beforeEach(() => {
+  var arr =  [1,2,3];
+  });
+
+  // Roda todas as vezes depois de um bloco
+  afterEach(() => {
+  });
+
+  it('should have a size of 4 when push another value to the array', ()=>{
+    arr.push(4);
+    console.log(arr.length);
+  });
+
+  it('should have a size of 2 when pop a value from the array', ()=>{
+    arr.pop(4);
+    console.log(arr.length);
+  });
+
+  it('should remove 3 when use pop in the array', ()=>{
+    console.log(arr.pop() === 3);
   });
 });
