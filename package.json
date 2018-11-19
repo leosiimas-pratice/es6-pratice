@@ -20,12 +20,16 @@
   "author": "Leonardo Abreu <leonardo.abreu@inf.ufrgs.br>",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-es2015-native-modules": "^6.9.4",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.1.4"
+    "husky": "^1.1.4",
+    "webpack": "^4.26.0"
   },
   "dependencies": {
     "lint": "^1.1.2"
