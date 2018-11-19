@@ -13,13 +13,15 @@ describe('Main', () => {
         // Espera que aconteca
         // Entra de dados / metodo sum(2,2)
         // Espera retornar(4) => true | (3) => false => broken test
+        throw new Error('just an error');
       });
     });
-    context('Case 2', () => {
+    context.skip('Case 2', () => {
       it('should happen bla', () => {
         // Espera que aconteca
         // Entra de dados / metodo sum(2,2)
         // Espera retornar(4) => true | (3) => false => broken test
+        throw new Error('just an error');
       });
       it('should happen blabla', () => {
         // Espera que aconteca
