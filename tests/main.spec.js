@@ -1,50 +1,58 @@
-// eslint-disable-next-line prefer-destructuring
-const expect = require('chai').expect;
-// eslint-disable-next-line no-undef
-describe('Main', () => {
-  let arr;
+var expect = require('chai').expect;
+var calc = require('../src/main.js');
 
-  // Roda uma vez antes do bloco
-  // eslint-disable-next-line no-undef
-  before(() => {
-  });
+describe('Calc', () => {
 
-  // Roda uma vez depois do bloco
-  // eslint-disable-next-line no-undef
-  after(() => {
-  });
+    //smoke tests
+    describe('Smoke tests', () =>{
 
-  // Roda todas as vezes antes de um bloco
-  // eslint-disable-next-line no-undef
-  beforeEach(() => {
-    arr = [1, 2, 3];
-  });
+        it('should exist the calc lib', () => {
+            expect(calc).to.exist;
+        });
 
-  // Roda todas as vezes depois de um bloco
-  // eslint-disable-next-line no-undef
-  afterEach(() => {
-  });
+        it('should exist the method `sum`', () => {
+            expect(calc.sum).to.exist;
+        });
+        it('should exist the method `sub`', () => {
+            expect(calc.sub).to.exist;
+        });
+        it('should exist the method `mul`', () => {
+            expect(calc.mul).to.exist;
+        });
+        it('should exist the method `div`', () => {
+            expect(calc.div).to.exist;
+        });
+    });
 
-  // eslint-disable-next-line no-undef
-  it('should be an array', () => {
-    expect(arr).to.be.a('array');
-  });
+    describe('Sum', () => {
+        it('should return 4 when `sum(2,2)`', () => {
+            expect(calc.sum(2,2)).to.be.equal(4);
+        });
+    });
 
-  // eslint-disable-next-line no-undef
-  it('should have a size of 4 when push another value to the array', () => {
-    arr.push(4);
-    expect(arr).to.have.lengthOf(4);
-  });
+    describe('Sub', () => {
+        it('should return 4 when `sub(6,2)`', () => {
+            expect(calc.sub(6,2)).to.be.equal(4);
+        });
 
-  // eslint-disable-next-line no-undef
-  it('should have a size of 2 when pop a value from the array', () => {
-    arr.pop(4);
-    expect(arr).to.have.lengthOf(2);
-  });
+        it('should return 4 when `sub(2,6)`', () => {
+            expect(calc.sub(2,6)).to.be.equal(-4);
+        });
+    });
 
-  // eslint-disable-next-line no-undef
-  it('should remove 3 when use pop in the array', () => {
-    arr.pop();
-    expect(arr).to.not.include(3);
-  });
-});
+    describe('Mul', () => {
+        it('should return 4 when `mul(2,2)`', () => {
+            expect(calc.mul(2,2)).to.be.equal(4);
+        });
+    });
+
+    describe('Div', () => {
+        it('should return 4 when `div(8,2)`', () => {
+            expect(calc.div(8,2)).to.be.equal(4);
+        });
+
+        it('should return `Não é possivel divisão por zero!` when divide by 0', () => {
+            expect(calc.div(8,0)).to.be.equal('Não é possivel divisão por zero!');
+        });
+    });
+})
